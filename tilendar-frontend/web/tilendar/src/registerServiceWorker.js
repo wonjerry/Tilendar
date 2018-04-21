@@ -1,4 +1,4 @@
-localhost = Boolean(
+const localhost = Boolean(
   window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
     window.location.hostname === '[::1]' ||
@@ -19,7 +19,7 @@ export default function register() {
 
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-      if (isLocalhost) {
+      if (localhost) {
         checkValidServiceWorker(swUrl);
       } else {
         registerValidServiceWorker(swUrl);
