@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import HeaderContainer from '../../../containers/HeaderContainer';
-import SignUpForm from './signUpForm.jsx';
+import Header from '../../../components/organisms/Header';
 
 class MainPage extends Component {
   render() {
     return (
       <div>
-        <HeaderContainer {...this.props} />
-        <SignUpForm />
+        <Header {...this.props} />
       </div>
     );
   }
