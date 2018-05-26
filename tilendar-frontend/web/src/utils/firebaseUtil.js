@@ -1,5 +1,4 @@
 import * as firebase from 'firebase';
-import _ from 'lodash';
 
 firebase.initializeApp({
   apiKey: 'AIzaSyBGyOsi9A-X9WE92yfdVg1Y7iKZE6pVaRY',
@@ -11,13 +10,10 @@ provider.addScope('repo');
 
 export const signIn = () => {
     return firebase.auth().signInWithPopup(provider)
-      .then((result) => {
-        const token = result.credential.accessToken;
-        const userData = result.user.providerData[0];
-        return _.assign(userData, { token });
-      });
+      .then((result) => firebase.auth().currentUser);
 };
 
 export const signOut = () => {
-  return firebase.auth().signOut();
+  return firebase.auth().signOut()
+    .then(() => firebase.auth().currentUser);
 };

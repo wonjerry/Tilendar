@@ -14,7 +14,7 @@ const Logged = (props) => (
   // TODO(hyungsun): Add badge and current user avatar(See material-ui/Avatar) from github.
   <FlatButton label='Sign Out' onClick={() => { 
     signOut()
-      .then(() => { props.setCurrentUser(null) })
+      .then(user => { props.setCurrentUser(user) })
       .catch(error => {
         console.error(error);
       });
@@ -25,7 +25,7 @@ const Logged = (props) => (
 const NotLogged = props => (
   <FlatButton label='Sign In' onClick={() => {
     signIn()
-      .then(userData => { props.setCurrentUser(userData) })
+      .then(user => { props.setCurrentUser(user) })
       .catch(error => {
         console.error(error);
       });
