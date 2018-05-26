@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
@@ -8,7 +9,6 @@ import FlatButton from 'material-ui/FlatButton';
 import { config } from '../../../config';
 import { signIn, signOut } from '../../../utils/firebaseUtil';
 import { actionCreators as authActionCreators } from '../../../actions/auth';
-import { connect } from 'react-redux';
 
 const Logged = (props) => (
   // TODO(hyungsun): Add badge and current user avatar(See material-ui/Avatar) from github.
